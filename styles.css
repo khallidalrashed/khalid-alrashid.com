@@ -19,6 +19,11 @@ body {
     border-radius: 8px; 
 }
 
+.back {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
 .content {
     padding: 20px;
     background-color: white;
