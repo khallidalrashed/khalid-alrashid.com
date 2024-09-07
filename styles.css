@@ -19,6 +19,18 @@ body {
     border-radius: 8px; 
 }
 
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
 
 .content {
     padding: 20px;
