@@ -2,14 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Personal website for COP4813 class. Includes web programming assignments and personal portfolio.">
     <meta name="keywords" content="web development, portfolio, COP4813">
     <meta name="author" content="Your Name">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        
+        function displayTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            
+           
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+            if (seconds < 10) seconds = "0" + seconds;
+
+            
+            var timeString = hours + ":" + minutes + ":" + seconds;
+
+           
+            document.getElementById("current-time").textContent = timeString;
+        }
+
+        
+        setInterval(displayTime, 1000);
+    </script>
+
 </head>
-<body>
+<body onload="displayTime()">
     <div class="header">
         <h1>Welcome to My Website "Cop 4813"</h1>
     </div>
@@ -20,9 +44,13 @@
             <a href="aboutme.html">About Me</a>
             <a href="Assignments.html">My Assignments</a>
             <a href="favoritesites.html">My Favorite Sites</a>
-            <a href="programmingsites.html">Programming Sites</a>
+            <a href="Myclasses.html">My Classes</a>
         </div>
         <img src="image.png" alt="Description of Image" class="main-image">
+       
+        <div id="current-time-container">
+            <p>Current Time: <span id="current-time"></span></p>
+        </div>
     </div>
 
     <div class="footer">
