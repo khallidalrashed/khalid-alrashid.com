@@ -19,9 +19,9 @@ body {
     border-radius: 8px; 
 }
 
-/*.button {
+.button {
     display: inline-block;
-    padding: 15px 25px;
+    padding: 10px 45px;
     font-size: 16px;
     font-weight: bold;
     color: white;
@@ -29,11 +29,10 @@ body {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
-    margin-top: 20px;
+    margin: 0px 0;
 }
-*/
 .content {
-    padding: 20px;
+    padding: 5px;
     background-color: white;
     text-align: center;
 }
@@ -46,7 +45,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-
 .links {
     display: flex;
     justify-content: center;
@@ -70,3 +68,4 @@ ul {
 ul li {
     margin: 5px 0;
 }
+
