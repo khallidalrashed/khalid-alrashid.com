@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        function validateForm() {
+            let firstName = document.getElementById('first-name').value.trim();
+            let lastName = document.getElementById('last-name').value.trim();
+            let address = document.getElementById('address').value.trim();
+            let city = document.getElementById('city').value.trim();
+            let state = document.getElementById('state').value.trim();
+            let zip = document.getElementById('zip').value.trim();
+            let phone = document.getElementById('phone').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let birthdate = document.getElementById('birthdate').value;
+            let message = document.getElementById('message').value.trim();
+            let confirmation = document.getElementById('confirmation').value.trim();
+            let isValid = true;
+
+            if (!firstName || !lastName) {
+                alert("Please enter both first and last names.");
+                isValid = false;
+            }
+            if (!address || !city || !state || !zip) {
+                alert("Please enter a valid address, including city, state, and zip code.");
+                isValid = false;
+            }
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                isValid = false;
+            }
+            if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                alert("Please enter a valid email address.");
+                isValid = false;
+            }
+            let birthdateObject = new Date(birthdate);
+            let today = new Date();
+            let age = today.getFullYear() - birthdateObject.getFullYear();
+            let monthDiff = today.getMonth() - birthdateObject.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthdateObject.getDate())) {
+                age--;
+            }
+            if (!birthdate || isNaN(birthdateObject.getTime()) || birthdateObject > new Date("2024-12-31")) {
+                alert("Please make sure the date is not in the future.");
+                isValid = false;
+            } else if (age < 16) {
+                alert("You must be at least 16 years old to submit the form.");
+                isValid = false;
+            }
+            if (!message) {
+                alert("Please enter a message.");
+                isValid = false;
+            }
+            if (confirmation.toLowerCase() !== "khalid") {
+                alert("Please answer the confirmation question correctly.");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        $(document).ready(function() {
+            $('#phone').on('input', function() {
+                this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+            });
+        });
+
+        function sendEmail(event) {
+            event.preventDefault(); 
+
+            if (!validateForm()) {
+                return;
+            }
+
+           
+            const templateParams = {
+                'first-name': document.getElementById('first-name').value,
+                'last-name': document.getElementById('last-name').value,
+                'address': document.getElementById('address').value,
+                'city': document.getElementById('city').value,
+                'state': document.getElementById('state').value,
+                'zip': document.getElementById('zip').value,
+                'phone': document.getElementById('phone').value,
+                'email': document.getElementById('email').value,
+                'birthdate': document.getElementById('birthdate').value,
+                'message': document.getElementById('message').value
+            };
+
+           
+            emailjs.send('service_6rk9wah', 'template_yfb9jil', templateParams)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                    document.getElementById('contact-form').reset(); 
+                }, function(error) {
+                    alert('Failed to send email. Please try again.');
+                    console.log('FAILED...', error);
+                });
+        }
+    </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init("OSe3jHemvs2r-BKHC");  
+      })();
+    </script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>User Information Form</h1>
+
+        <form id="contact-form" onsubmit="sendEmail(event);">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+        
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+        
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+        
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+        
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" pattern="\d{5}" required>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" placeholder="1234567890" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="birthdate">Birth Date:</label>
+            <input type="date" id="birthdate" name="birthdate" max="2024-12-31" required>
+        
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        
+            <label for="confirmation">What is my first name?</label>
+            <input type="text" id="confirmation" name="confirmation" required>
+        
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="content">
+        <a href="index.html" class="back-link">Back</a>
+    </div>
+
+</body>
+</html>
