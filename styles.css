@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
 }
 
 
@@ -45,6 +46,7 @@ body {
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    text-align: center;
 }
 .links {
     display: flex;
@@ -94,6 +96,7 @@ form label {
     width: 100%;
 }
 
+form input[type="number"],
 form input[type="text"],
 form input[type="email"],
 form input[type="date"],
@@ -112,6 +115,7 @@ form textarea {
     height: 100px;
 }
 
+form input[type="number"]:focus,
 form input[type="text"]:focus,
 form input[type="email"]:focus,
 form input[type="date"]:focus,
@@ -142,10 +146,26 @@ form button:hover {
     color: #007BFF;
 }
 
-/* Error Message */
+.canvas-container {
+    margin-top: 30px;
+}
+
 .error {
     color: red;
     font-size: 14px;
     margin-top: -10px;
     margin-bottom: 10px;
+}
+
+.chart-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
