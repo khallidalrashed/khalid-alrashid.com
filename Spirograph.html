@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spirograph</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid rgb(0, 0, 0);
+            margin-top: 20px;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spirograph</h1>
+    <canvas id="spiroCanvas" width="600" height="600"></canvas>
+    
+    <div class="controls">
+        <label for="R">Outer Circle Radius (R):</label>
+        <input type="number" id="R" value="100" min="10" max="300"><br>
+        <label for="r">Inner Circle Radius (r):</label>
+        <input type="number" id="r" value="50" min="10" max="300"><br>
+        <label for="O">Pen Offset (O):</label>
+        <input type="number" id="O" value="20" min="0" max="100"><br><br>
+        <button onclick="startSpirograph()">Start Spirograph</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('spiroCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let t = 0; 
+        let R, r, O; 
+
+        function spirographEquations(t, R, r, O) {
+            const x = (R + r) * Math.cos(t) - (r + O) * Math.cos(((R + r) / r) * t);
+            const y = (R + r) * Math.sin(t) - (r + O) * Math.sin(((R + r) / r) * t);
+            return { x, y };
+        }
+
+        function startSpirograph() {
+            
+            R = parseFloat(document.getElementById('R').value);
+            r = parseFloat(document.getElementById('r').value);
+            O = parseFloat(document.getElementById('O').value);
+
+            if (r >= R) {
+                alert('r must be less than R');
+                return;
+            }
+
+            t = 0;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+
+            requestAnimationFrame(drawSpirograph); 
+        }
+
+        function drawSpirograph() {
+            if (t > Math.PI * 20) return;
+            
+            const pos = spirographEquations(t, R, r, O);
+            ctx.lineTo(canvas.width / 2 + pos.x, canvas.height / 2 + pos.y);
+            ctx.stroke();
+
+            t += 0.05; 
+            requestAnimationFrame(drawSpirograph);
+        }
+    </script>
+    <div class="content">
+        <a href="index.html" class="back-link">Back</a>
+    </div>
+
+    <div class="footer">
+        <p>Created by Khalid Alrashid</p>
+    </div>
+</body>
+</html>
