@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
+    color: #333
 }
 
 
@@ -168,4 +169,74 @@ form button:hover {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.json-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.json-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.json-table th, 
+.json-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.json-table th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: 500;
+}
+
+.json-table td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.json-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.json-title {
+    font-size: 28px;
+    font-weight: 500;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+
+.json-output {
+    text-align: left;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.json-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
