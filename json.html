@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Explore Popular Travel Destinations</h1>
+    </div>
+
+    <div class="json-container">
+        <h2 class="json-title">Top Travel Destinations</h2>
+        
+        <table class="json-table">
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Country</th>
+                    <th>Best Time to Visit</th>
+                    <th>Top Attraction</th>
+                </tr>
+            </thead>
+            <tbody id="jsonDataTable">
+               
+            </tbody>
+        </table>
+
+        
+
+    <div class="footer">
+        <p>Created by Khalid Alrashid</p>
+    </div>
+
+    <script>
+       
+        fetch('myjson.json')
+            .then(response => response.json())
+            .then(data => {
+                let tableBody = document.getElementById('jsonDataTable');
+                let rawJsonOutput = document.getElementById('rawJsonOutput');
+
+                data.forEach(item => {
+                    let row = `<tr>
+                        <td>${item.location}</td>
+                        <td>${item.country}</td>
+                        <td>${item.bestTimeToVisit}</td>
+                        <td>${item.topAttraction}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+
+               
+                rawJsonOutput.textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.error('Error fetching JSON:', error);
+            });
+    </script>
+
+</body>
+</html>
