@@ -1,0 +1,26 @@
+[
+    {
+        "location": "Paris",
+        "country": "France",
+        "bestTimeToVisit": "April to June",
+        "topAttraction": "Eiffel Tower"
+    },
+    {
+        "location": "Kyoto",
+        "country": "Japan",
+        "bestTimeToVisit": "March to May",
+        "topAttraction": "Fushimi Inari Shrine"
+    },
+    {
+        "location": "New York City",
+        "country": "USA",
+        "bestTimeToVisit": "April to June, September to November",
+        "topAttraction": "Statue of Liberty"
+    },
+    {
+        "location": "Rome",
+        "country": "Italy",
+        "bestTimeToVisit": "April to October",
+        "topAttraction": "Colosseum"
+    }
+]
