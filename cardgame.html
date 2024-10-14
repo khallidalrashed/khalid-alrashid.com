@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop Card Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Drag and Drop Card Game</h1>
+
+  <button id="dealButton">Deal Cards</button>
+
+  <div id="cardArea"></div>
+
+  <h2>Discard Pile</h2>
+  <div id="discardPile"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    
+    const suits = ['clubs', 'hearts', 'diamonds', 'spades'];
+    const ranks = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king'];
+    const deck = [];
+  
+   
+    suits.forEach(suit => {
+      ranks.forEach(rank => {
+        deck.push(`PNG-cards-1.3/${rank}_of_${suit}.png`);
+      });
+    });
+  
+    
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+  
+   
+    function dealCards() {
+      shuffle(deck);
+      const cardArea = $('#cardArea');
+      cardArea.empty();
+  
+      
+      for (let i = 0; i < 5; i++) {
+        const card = $('<div class="card"></div>');
+        card.css('background-image', `url('${deck[i]}')`);
+        card.draggable({
+          revert: true
+        });
+        cardArea.append(card);
+      }
+    }
+  
+    
+    function setupDiscardPile() {
+      $('#discardPile').droppable({
+        drop: function(event, ui) {
+          const card = ui.draggable;
+          card.fadeOut(function() {
+            card.remove(); 
+          });
+          alert('Card discarded!');
+        }
+      });
+    }
+  
+    
+    $(document).ready(function() {
+      setupDiscardPile(); 
+      $('#dealButton').on('click', dealCards);
+    });
+  </script>
+
+  <div class="content">
+        
+    
+
+    <a href="index.html" class="back-link">Back</a>
+</div>
+
+<div class="footer">
+    <p>Created by Khalid Alrashid</p>
+</div>
+  
+</body>
+</html>
