@@ -240,3 +240,38 @@ form button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
+
+#dealButton {
+    margin: 20px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #cardArea {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    background-size: cover;
+    cursor: move;
+  }
+
+  #discardPile {
+    width: 100px;
+    height: 150px;
+    margin-top: 20px;
+    border: 2px dashed #333;
+  }
