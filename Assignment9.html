@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>An Interactive Animated Bouncing Object</title>
+    
+    
+    <style>
+        canvas {
+            background-color: lightgray;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Interactive Bouncing Ball</h1>
+        <p>Click the ball to change its color!</p>
+    </header>
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        
+        let x = canvas.width / 2;
+        let y = canvas.height / 2;
+        let dx = 1; 
+        let dy = 1;
+        const radius = 20;
+        let color = "blue";
+
+        function animate() {
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+           
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.closePath();
+            
+            
+            if (x + radius > canvas.width || x - radius < 0) {
+                dx = -dx;
+            }
+            
+           
+            if (y + radius > canvas.height || y - radius < 0) {
+                dy = -dy;
+            }
+            
+           
+            x += dx;
+            y += dy;
+
+
+
+            
+            requestAnimationFrame(animate);
+        }
+        canvas.addEventListener('click', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+            const mouseY = event.clientY - rect.top;
+            const distance = Math.sqrt((mouseX - x) ** 2 + (mouseY - y) ** 2);
+            if (distance < radius) {
+               
+                color = color === "blue" ? "red" : "blue";
+            }
+        });
+
+      
+        animate();
+    </script>
+    <div class="content">
+        
+    
+
+        <a href="index.html" class="back-link">Back</a>
+    </div>
+
+    <div class="footer">
+        <p>Created by Khalid Alrashid</p>
+    </div>
+</body>
+</html>
