@@ -3,9 +3,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-    color: #333
+    color: #333;
 }
-
 
 .header, .footer {
     background-color: #007BFF; 
@@ -34,6 +33,7 @@ body {
     text-align: center;
     margin: 0px 0;
 }
+
 .content {
     padding: 5px;
     background-color: white;
@@ -49,6 +49,7 @@ body {
     border-radius: 10px;
     text-align: center;
 }
+
 .links {
     display: flex;
     justify-content: center;
@@ -171,7 +172,6 @@ form button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 .json-container {
     width: 80%;
     margin: 40px auto;
@@ -181,7 +181,6 @@ form button:hover {
     border-radius: 10px;
     text-align: center;
 }
-
 
 .json-table {
     width: 100%;
@@ -211,14 +210,12 @@ form button:hover {
     background-color: #f2f2f2;
 }
 
-
 .json-title {
     font-size: 28px;
     font-weight: 500;
     color: #007BFF;
     margin-bottom: 20px;
 }
-
 
 .json-output {
     text-align: left;
@@ -231,7 +228,6 @@ form button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .json-scroll {
     max-height: 300px;
     overflow-y: auto;
@@ -240,7 +236,6 @@ form button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
-
 
 #dealButton {
     margin: 20px;
@@ -275,3 +270,25 @@ form button:hover {
     margin-top: 20px;
     border: 2px dashed #333;
   }
+
+  
+
+.canvas-container {
+    width: 600px;  
+    height: 400px; 
+    margin: 40px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+canvas {
+    background-color: lightgray;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
