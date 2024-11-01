@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +8,7 @@ body {
 }
 
 .header, .footer {
-    background-color: #007BFF; 
+    background-color: #007BFF;
     color: white;
     padding: 20px;
     text-align: center;
@@ -15,15 +16,15 @@ body {
 
 .main-image {
     max-width: 100%;
-    height: auto; 
+    height: auto;
     display: block;
-    margin: 50px auto 20px;
-    border-radius: 8px; 
+    margin: 30px auto 15px;
+    border-radius: 8px;
 }
 
 .button {
     display: inline-block;
-    padding: 10px 45px;
+    padding: 8px 30px;
     font-size: 16px;
     font-weight: bold;
     color: white;
@@ -31,7 +32,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
-    margin: 0px 0;
+    margin: 5px 0;
 }
 
 .content {
@@ -40,16 +41,18 @@ body {
     text-align: center;
 }
 
+/* Container */
 .container {
-    width: 60%;
-    margin: 50px auto;
+    width: 80%;
+    margin: 30px auto;
     background-color: white;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     text-align: center;
 }
 
+/* Links */
 .links {
     display: flex;
     justify-content: center;
@@ -57,45 +60,29 @@ body {
 }
 
 .links a {
-    margin: 0 10px;
-    padding: 10px 20px;
+    margin: 0 5px;
+    padding: 8px 15px;
     background-color: #007BFF;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 5px 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Form Styles */
 .form-container {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
-    padding: 30px;
+    padding: 20px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 form label {
-    display: block;
     font-weight: bold;
     margin: 10px 0 5px;
     color: #333;
-    width: 100%;
 }
 
 form input[type="number"],
@@ -110,20 +97,6 @@ form textarea {
     border-radius: 5px;
     font-size: 16px;
     color: #333;
-}
-
-form textarea {
-    resize: vertical;
-    height: 100px;
-}
-
-form input[type="number"]:focus,
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="date"]:focus,
-form textarea:focus {
-    border-color: #007BFF;
-    outline: none;
 }
 
 form button {
@@ -142,153 +115,77 @@ form button:hover {
     background-color: #0056b3;
 }
 
-.form-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #007BFF;
-}
-
-.canvas-container {
-    margin-top: 30px;
-}
-
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
-
-.chart-container {
-    margin-top: 20px;
+/* Canvas and Chart Containers */
+.canvas-container,
+.chart-container,
+.json-container {
     width: 100%;
     max-width: 600px;
-    height: 400px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: #ffffff;
-    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.json-container {
-    width: 80%;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-}
-
-.json-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.json-table th, 
-.json-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-.json-table th {
-    background-color: #007BFF;
-    color: white;
-    font-weight: 500;
-}
-
-.json-table td {
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-.json-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.json-title {
-    font-size: 28px;
-    font-weight: 500;
-    color: #007BFF;
-    margin-bottom: 20px;
-}
-
-.json-output {
-    text-align: left;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 16px;
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.json-scroll {
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#dealButton {
-    margin: 20px;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  #cardArea {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-
-  .card {
-    width: 100px;
-    height: 150px;
-    margin: 10px;
-    background-size: cover;
-    cursor: move;
-  }
-
-  #discardPile {
-    width: 100px;
-    height: 150px;
-    margin-top: 20px;
-    border: 2px dashed #333;
-  }
-
-  
-
-.canvas-container {
-    width: 600px;  
-    height: 400px; 
-    margin: 40px auto;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-}
-
 
 canvas {
     background-color: lightgray;
     display: block;
     margin: 0 auto;
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile-Friendly Styles */
+@media (max-width: 768px) {
+    .container, .form-container, .chart-container, .json-container, .canvas-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .header, .footer {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+
+    .links a {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .json-table th, .json-table td {
+        padding: 8px;
+    }
+
+    .json-scroll {
+        max-height: 200px;
+    }
+
+    /* Adjust font sizes for better readability on mobile */
+    body, form label, .json-title {
+        font-size: 16px;
+    }
+
+    .main-image {
+        margin: 20px auto;
+    }
+
+    .canvas-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .json-output {
+        font-size: 14px;
+    }
 }
