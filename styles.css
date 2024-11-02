@@ -136,7 +136,7 @@ canvas {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Mobile-Friendly Styles */
+
 @media (max-width: 768px) {
     .container, .form-container, .chart-container, .json-container, .canvas-container {
         width: 90%;
@@ -177,9 +177,12 @@ canvas {
     }
 
     .main-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
         margin: 20px auto;
-    }
-
+        border-radius: 8px; }
+        
     .canvas-container {
         width: 100%;
         padding: 10px;
