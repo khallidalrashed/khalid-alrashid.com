@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
 }
 
 .header, .footer {
-    background-color: #007BFF;
+    background-color: #0056a3;
     color: white;
     padding: 20px;
     text-align: center;
@@ -28,7 +28,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #007BFF;
+    background-color: #0056a3;
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
@@ -62,7 +62,7 @@ body {
 .links a {
     margin: 0 5px;
     padding: 8px 15px;
-    background-color: #007BFF;
+    background-color: #0056a3;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -93,7 +93,7 @@ form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 16px;
     color: #333;
@@ -102,7 +102,7 @@ form textarea {
 form button {
     width: 100%;
     padding: 12px;
-    background-color: #007BFF;
+    background-color: #0056a3;
     border: none;
     color: #fff;
     border-radius: 5px;
@@ -112,10 +112,10 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #003c7a;
 }
 
-/* Canvas and Chart Containers */
+
 .canvas-container,
 .chart-container,
 .json-container {
@@ -171,7 +171,7 @@ canvas {
         max-height: 200px;
     }
 
-    /* Adjust font sizes for better readability on mobile */
+    
     body, form label, .json-title {
         font-size: 16px;
     }
@@ -181,8 +181,10 @@ canvas {
         height: auto;
         display: block;
         margin: 20px auto;
-        border-radius: 8px; }
-        
+        border-radius: 8px; 
+       
+    }
+
     .canvas-container {
         width: 100%;
         padding: 10px;
