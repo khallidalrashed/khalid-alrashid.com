@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Advising Tool</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <header class="header">
+        <h1>Dynamic Objects</h1>
+       
+    </header>
+
+<div class="container">
+    <h1>Class Advising Tool</h1>
+
+    <div class="course-list">
+        <h2>Available Courses</h2>
+        <div id="available-courses"></div>
+    </div>
+
+    <div class="completed-courses">
+        <h2>Completed Courses</h2>
+        <div id="completed-courses"></div>
+    </div>
+</div>
+
+<script>
+    
+    const programData = {
+        "program": "BS Information Technology",
+        "courses": [
+            {
+                "id": "COP2800",
+                "name": "Java Programming",
+                "prerequisites": ["COP1000"],
+                "info": "Fundamentals of Java programming."
+            },
+            {
+                "id": "COP2001",
+                "name": "Programming Fundamentals",
+                "prerequisites": [],
+                "info": "An introduction to programming concepts."
+            },
+            {
+                "id": "CIS4500",
+                "name": "Advanced Database Systems",
+                "prerequisites": ["COP2800", "COP2001"],
+                "info": "In-depth study of database systems."
+            }
+        ]
+    };
+
+  
+    let completedCourses = [];
+
+    function displayAvailableCourses() {
+        const availableCoursesContainer = document.getElementById('available-courses');
+        availableCoursesContainer.innerHTML = '';
+
+        programData.courses.forEach(course => {
+            const isEligible = checkPrerequisites(course.id);
+            const courseDiv = document.createElement('div');
+            courseDiv.className = 'course-item';
+
+          
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = course.id;
+            checkbox.disabled = !isEligible || completedCourses.includes(course.id);
+            checkbox.className = isEligible ? '' : 'disabled';
+            checkbox.addEventListener('change', () => toggleCompletedCourse(course.id));
+
+            const label = document.createElement('label');
+            label.textContent = `${course.id} - ${course.name}: ${course.info}`;
+            courseDiv.appendChild(checkbox);
+            courseDiv.appendChild(label);
+
+            
+            if (course.prerequisites.length > 0) {
+                const prerequisitesText = document.createElement('p');
+                prerequisitesText.style.fontSize = "0.9em";
+                prerequisitesText.textContent = `Prerequisites: ${course.prerequisites.join(" or ")}`;
+                courseDiv.appendChild(prerequisitesText);
+            }
+
+            availableCoursesContainer.appendChild(courseDiv);
+        });
+    }
+
+   
+    function checkPrerequisites(courseId) {
+        const course = programData.courses.find(c => c.id === courseId);
+        if (!course || course.prerequisites.length === 0) return true;
+
+        return course.prerequisites.some(prerequisite =>
+            completedCourses.includes(prerequisite)
+        );
+    }
+
+
+    function toggleCompletedCourse(courseId) {
+        if (completedCourses.includes(courseId)) {
+            completedCourses = completedCourses.filter(id => id !== courseId);
+        } else {
+            completedCourses.push(courseId);
+        }
+        updateCompletedCourses();
+        displayAvailableCourses();
+    }
+
+    function updateCompletedCourses() {
+        const completedCoursesContainer = document.getElementById('completed-courses');
+        completedCoursesContainer.innerHTML = '';
+        completedCourses.forEach(courseId => {
+            const courseDiv = document.createElement('div');
+            courseDiv.textContent = courseId;
+            completedCoursesContainer.appendChild(courseDiv);
+        });
+    }
+
+  
+    displayAvailableCourses();
+</script>
+    <div class="content"> 
+        <a class="back-link" href="index.html">Back</a>
+    </div>
+
+    <div class="footer">
+        <p>Created by Khalid Alrashid</p>
+    </div>
+</body>
+</html>
