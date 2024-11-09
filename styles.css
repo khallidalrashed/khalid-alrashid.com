@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,12 +6,14 @@ body {
     color: #333;
 }
 
+
 .header, .footer {
     background-color: #0056a3;
     color: white;
     padding: 20px;
     text-align: center;
 }
+
 
 .main-image {
     max-width: 100%;
@@ -21,6 +22,7 @@ body {
     margin: 30px auto 15px;
     border-radius: 8px;
 }
+
 
 .button {
     display: inline-block;
@@ -35,24 +37,35 @@ body {
     margin: 5px 0;
 }
 
-.content {
-    padding: 5px;
-    background-color: white;
-    text-align: center;
+.button:hover {
+    background-color: #003c7a;
 }
 
-/* Container */
-.container {
-    width: 80%;
-    margin: 30px auto;
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+.content, .container, .form-container, .canvas-container, .chart-container, .json-container {
     background-color: white;
+    text-align: center;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    text-align: center;
 }
 
-/* Links */
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.form-container, .canvas-container, .chart-container, .json-container {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+
 .links {
     display: flex;
     justify-content: center;
@@ -68,16 +81,6 @@ body {
     border-radius: 5px;
 }
 
-/* Form Styles */
-.form-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
 
 form label {
     font-weight: bold;
@@ -111,21 +114,71 @@ form button {
     transition: background-color 0.3s;
 }
 
-form button:hover {
-    background-color: #003c7a;
+
+#advisor-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+}
+
+#advisor-container h2 {
+    text-align: center;
+    color: #0056a3;
+    font-size: 1.8rem;
 }
 
 
-.canvas-container,
-.chart-container,
-.json-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.course-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.course-item label {
+    margin-left: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.course-info {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.2rem;
+    margin-left: 1.8rem;
+}
+
+.course-info span {
+    font-style: italic;
+}
+
+.course-item input[type="checkbox"]:disabled + label {
+    color: #999;
+    text-decoration: line-through;
+}
+
+
+.dynamic-note {
+    background-color: #e6f7ff;
+    border-left: 4px solid #0056a3;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    color: #0056a3;
+}
+
+.course-item:hover {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
 
 canvas {
@@ -135,7 +188,6 @@ canvas {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 @media (max-width: 768px) {
     .container, .form-container, .chart-container, .json-container, .canvas-container {
@@ -171,26 +223,11 @@ canvas {
         max-height: 200px;
     }
 
-    
     body, form label, .json-title {
         font-size: 16px;
     }
 
     .main-image {
-        max-width: 100%;
-        height: auto;
-        display: block;
         margin: 20px auto;
-        border-radius: 8px; 
-       
-    }
-
-    .canvas-container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .json-output {
-        font-size: 14px;
     }
 }
