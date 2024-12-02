@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Miner: Deep Dig</title>
+  <link rel="stylesheet" href="stylesa.css">
+</head>
+<body>
+  <h1>Pixel Miner: Deep Dig</h1>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="400" height="600"></canvas>
+  </div>
+  <div id="stats">
+    <div id="score">Score: 0</div>
+    <div id="energy">Energy: 100%</div>
+    <div id="timer">Time: 60s</div>
+  </div>
+  <button id="start-button" aria-label="Start the game">Start Game</button>
+  <button id="instructions-button" aria-label="View game instructions">Instructions</button>
+  <div id="instructions" style="display: none;">
+
+  <h1>Objective:</h1>
+    <p>Help the mining robot dig through the underground terrain to collect gems for points and diamonds to extend time while avoiding dangerous lava pocket traps. Maximize your score before running out of time or energy! The deeper you dig, the harder it gets!</p>
+  
+  <h2>Controls:</h2>
+  <ul>
+    <li><b>Up Arrow:</b> Move up</li>
+    <li><b>Down Arrow:</b> Move down</li>
+    <li><b>Left Arrow:</b> Move left</li>
+    <li><b>Right Arrow:</b> Move right</li>
+  </ul>
+  
+  <h2>Rules:</h2>
+  <ul>
+    <li><b>Scoring:</b> 
+      <ul>
+        <li>Collect Gems to earn <b>10 points</b>.</li>
+        <li>Collect Diamonds to earn <b>50 points</b> and gain an extra <b>10 seconds</b> of time.</li>
+      </ul>
+    </li>
+    <li><b>Energy:</b> Every move costs <b>5 energy points</b>. Running out of energy ends the game.</li>
+    <li><b>Traps:</b> Stepping on a Lava Pocket trap ends the game immediately.</li>
+    <li><b>Timer:</b> You start with <b>60 seconds</b>. Time runs out unless you collect diamonds to extend it.</li>
+    <li><b>Collapsing Terrain:</b> Random tiles may collapse as you dig, so plan your moves carefully.</li>
+  </ul>
+</div>
+  <script src="javascript.js"></script>
+</body>
+</html>
+
+  
