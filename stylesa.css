@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #202020;
+    color: white;
+  }
+  
+  #game-container {
+    margin: 20px auto;
+    width: 400px;
+    height: 600px;
+    border: 2px solid #fff;
+    background-color: #3a3a3a;
+  }
+  
+  #stats {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin: 10px auto;
+  }
+  
+  #start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+/* --- CONTENT ADDED BY: Ryan Garcia --- Instructions css style format*/
+#instructions {
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #4e4e4e; /* Slightly lighter border for harmony */
+  background-color: #222; /* Darker background for better contrast */
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+  border-radius: 8px; /* Rounded corners for a soft look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
+  width: 80%; /* Center it and control the width */
+  max-width: 900px; /* Prevent it from getting too wide */
+  text-align: left;
+}
+
+#instructions h2 {
+  font-size: 1.5rem;
+  color: #f9c74f; /* Accent color for the header */
+  margin-bottom: 15px;
+  border-bottom: 2px solid #4e4e4e; /* Subtle divider under the heading */
+  padding-bottom: 5px;
+}
+
+#instructions p {
+  margin-bottom: 20px;
+  color: #e0e0e0; /* Lighter text for better readability */
+}
+
+#instructions ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 10px;
+  color: #ddd; /* Slightly lighter color for list items */
+}
+
+#instructions ul ul {
+  list-style-type: circle;
+  margin-left: 20px;
+  color: #bbb; /* Even lighter color for nested lists */
+}
+
+#instructions li {
+  margin-bottom: 12px;
+}
+
+#instructions b {
+  font-weight: bold;
+  color: #f9c74f; /* Accent color for bold text */
+}
+
+#instructions a {
+  color: #00bfff; /* Link color to stand out */
+  text-decoration: none;
+}
+
+#instructions a:hover {
+  text-decoration: underline;
+}
