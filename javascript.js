@@ -10,6 +10,7 @@ let timer = 60;
 let gameInterval;
 let gameEnded = false; // --- LINE ADDED BY: Ryan Garcia --- // Tracks if the game has ended
 let difficulty = 1;
+let face = '🙂';
 
 function initGrid() {
   grid = Array.from({ length: rows }, (_, y) =>
