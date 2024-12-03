@@ -68,6 +68,11 @@ function drawPlayer() {
     tileSize - 10,
     tileSize - 10
   );
+  ctx.font = "30px Arial";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillStyle = "#000"; // Black color for the emoji
+  ctx.fillText(face, player.x * tileSize + tileSize / 2, player.y * tileSize + tileSize / 2);
 }
 
 function updateStats() {
