@@ -26,6 +26,16 @@ function initGrid() {
   grid[0][player.x] = { type: 'empty' };
 }
 
+
+function getPlayerFace() {
+  if (player.energy > 70) {
+    return '😊'; // Happy face
+  } else if (player.energy > 30) {
+    return '😐'; // Neutral face
+  } else {
+    return '😞'; // Sad face
+  }
+}
 // --- ENTIRE FUNCTION REVISED BY: Ryan Garcia ---
 // Added gradient color for traps (Lava/Magma) along with adding diamonds for gems that add time to timer
 function drawGrid() {
